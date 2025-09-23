@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Search View -->
+    <record id="view_tt_task_search" model="ir.ui.view">
+        <field name="name">tt.task.search</field>
+        <field name="model">tt.task</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="ticket_number"/>
+                <field name="employee_id"/>
+                <field name="task_type_id"/>
+                <field name="tag_ids"/>
+                <field name="building_tag_ids"/>
+                <field name="state"/>
+                <filter name="open_tasks" string="Open" domain="[('is_closed', '=', False)]"/>
+                <filter name="closed_tasks" string="Closed" domain="[('is_closed', '=', True)]"/>
+                <filter name="today" string="Today" domain="[('scheduled_date','&gt;=', context_today().strftime('%%Y-%%m-%%d 00:00:00')), ('scheduled_date','&lt;=', context_today().strftime('%%Y-%%m-%%d 23:59:59'))]"/>
+                <filter name="state_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="state_in" string="In Progress" domain="[('state','=','in_progress')]"/>
+                <filter name="state_done" string="Done" domain="[('state','=','done')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_employee" string="Technician" context="{'group_by':'employee_id'}"/>
+                    <filter name="group_by_type" string="Type" context="{'group_by':'task_type_id'}"/>
+                    <filter name="group_by_state" string="State" context="{'group_by':'state'}"/>
+                    <filter name="group_by_date" string="Date" context="{'group_by':'scheduled_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- List View (Odoo 17+/18 replaces 'tree' with 'list') -->
+    <record id="view_tt_task_tree" model="ir.ui.view">
+        <field name="name">tt.task.tree</field>
+        <field name="model">tt.task</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="ticket_number"/>
+                <field name="employee_id"/>
+                <field name="task_type_id"/>
+                <field name="scheduled_date"/>
+                <field name="partner_id"/>
+                <field name="building_tag_ids" widget="many2many_tags"/>
+                <field name="location_text"/>
+                <field name="vehicle_id"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="view_tt_task_kanban" model="ir.ui.view">
+        <field name="name">tt.task.kanban</field>
+        <field name="model">tt.task</field>
+        <field name="priority">90</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="stage_id"
+                class="o_kanban_small_column"
+                highlight_color="color"
+                default_order="state asc, scheduled_date asc, id desc">
+                <field name="color"/>
+                <field name="state"/>
+                <field name="employee_id"/>
+                <field name="partner_id"/>
+                <field name="location_text"/>
+                <field name="building_tag_ids"/>
+                <field name="tag_ids"/>
+                <field name="ticket_number"/>
+                <field name="vehicle_id"/>
+                <field name="photo_ids"/>
+                <field name="kanban_state"/>
+                <field name="is_closed"/>
+                <templates>
+                    <t t-name="menu">
+                        <field name="color" widget="kanban_color_picker"/>
+                    </t>
+                    <t t-name="card">
+                        <t t-set="isClosed" t-value="record.is_closed.raw_value"/>
+                        <div class="oe_kanban_global_click o_ttm_task_kanban" t-att-class="{'opacity-50': isClosed}">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <div class="text-end">
+                                    <span class="badge text-bg-success" t-if="record.state.raw_value == 'done'">Done</span>
+                                    <span class="badge text-bg-warning" t-elif="record.state.raw_value == 'in_progress'">In Progress</span>
+                                    <span class="badge text-bg-secondary" t-else="">Draft</span>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <field name="name" class="fw-bold fs-6"/>
+                                <div class="text-muted small">
+                                    <t t-if="record.partner_id"><field name="partner_id"/></t>
+                                    <t t-elif="record.location_text"><t t-esc="record.location_text"/></t>
+                                </div>
+                            </div>
+                            <div class="pt-2">
+                                <field name="building_tag_ids" widget="many2many_tags"/>
+                                <field name="tag_ids" widget="many2many_tags"/>
+                            </div>
+                            <div class="pt-2 text-muted small">
+                                <span><i class="fa fa-user me-1"></i><field name="employee_id"/></span>
+                                <span class="ms-3" t-if="record.ticket_number"><i class="fa fa-ticket me-1"></i><field name="ticket_number"/></span>
+                                <span class="ms-3" t-if="record.vehicle_id"><i class="fa fa-car me-1"></i><field name="vehicle_id"/></span>
+                                <span class="ms-3 text-danger" t-if="!record.photo_ids">No photo</span>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <!-- Calendar View -->
+    <record id="view_tt_task_calendar" model="ir.ui.view">
+        <field name="name">tt.task.calendar</field>
+        <field name="model">tt.task</field>
+        <field name="arch" type="xml">
+            <calendar date_start="scheduled_date" color="employee_id" mode="day">
+                <field name="name"/>
+                <field name="employee_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <!-- Form View with gating for technicians -->
+    <record id="view_tt_task_form" model="ir.ui.view">
+        <field name="name">tt.task.form</field>
+        <field name="model">tt.task</field>
+        <field name="arch" type="xml">
+            <form string="Technician Task" class="tt_task_form">
+                <header>
+                    <!-- Start button with geolocation -->
+                    <field name="start_button_widget" widget="tt_task_start_button" invisible="not can_start" nolabel="1"/>
+                    <button name="action_open_finish_wizard" type="object" string="Finish" class="btn-danger" invisible="not can_stop or is_paused"/>
+                    <button name="action_pause_timer" type="object" string="Pause" class="btn-secondary" invisible="not can_pause"/>
+                    <button name="action_resume_timer" type="object" string="Resume" class="btn-secondary" invisible="not can_resume"/>
+                    <field name="current_timer_display" nolabel="1" readonly="1" class="oe_inline o_stat_value"/>
+
+                    <field name="stage_id" widget="statusbar" options="{'fold_field': 'fold'}" groups="technician_task_mgmt.group_tech_manager"/>
+                </header>
+                <sheet>
+                    <!-- Ensure compute fields are loaded for visibility modifiers -->
+                    <field name="can_start" invisible="1"/>
+                    <field name="can_stop" invisible="1"/>
+                    <field name="start_datetime" invisible="1"/>
+                    <field name="is_paused" invisible="1"/>
+                    <field name="state" invisible="1"/>
+
+                    <group>
+                        <group>
+                            <!-- Name field: Read-only for technicians, editable for managers -->
+                            <field name="name" readonly="1" groups="technician_task_mgmt.group_technician"/>
+                            <field name="name" groups="technician_task_mgmt.group_tech_manager"/>
+
+                            <!-- Ticket Number field: Read-only for technicians, editable for managers -->
+                            <field name="ticket_number" readonly="1" groups="technician_task_mgmt.group_technician"/>
+                            <field name="ticket_number" groups="technician_task_mgmt.group_tech_manager"/>
+
+                            <!-- Customer field: Read-only for technicians, editable for managers -->
+                            <field name="partner_id" readonly="1" groups="technician_task_mgmt.group_technician"/>
+                            <field name="partner_id" groups="technician_task_mgmt.group_tech_manager"/>
+
+                            <!-- Employee field: Read-only for technicians, editable for managers -->
+                            <field name="employee_id" readonly="1" groups="technician_task_mgmt.group_technician"/>
+                            <field name="employee_id" groups="technician_task_mgmt.group_tech_manager"/>
+                        </group>
+                        <group>
+                            <!-- Task Type field: Read-only for technicians, editable for managers -->
+                            <field name="task_type_id" readonly="1" groups="technician_task_mgmt.group_technician"/>
+                            <field name="task_type_id" groups="technician_task_mgmt.group_tech_manager"/>
+
+                            <field name="vehicle_id"/>
+
+                            <!-- Scheduled Date field: Read-only for technicians, editable for managers -->
+                            <field name="scheduled_date" readonly="1" groups="technician_task_mgmt.group_technician"/>
+                            <field name="scheduled_date" groups="technician_task_mgmt.group_tech_manager"/>
+                        </group>
+                    </group>
+
+                    <!-- Location header visible to all -->
+                    <group string="Location">
+                        <!-- Location Tags field: Read-only for technicians, editable for managers -->
+                        <field name="building_tag_ids" widget="many2many_tags" readonly="1" groups="technician_task_mgmt.group_technician"/>
+                        <field name="building_tag_ids" widget="many2many_tags" groups="technician_task_mgmt.group_tech_manager"/>
+
+                        <!-- Location Details field: Read-only for technicians, editable for managers -->
+                        <field name="location_text" placeholder="Add location details..." readonly="1" groups="technician_task_mgmt.group_technician"/>
+                        <field name="location_text" placeholder="Add location details..." groups="technician_task_mgmt.group_tech_manager"/>
+                    </group>
+
+                    <!-- Manager pages: always visible -->
+                    <notebook groups="technician_task_mgmt.group_tech_manager">
+                        <page string="Details">
+                <group>
+                                <!-- Tags field: Editable for managers -->
+                        <field name="tag_ids" widget="many2many_tags"/>
+                </group>
+                            <group>
+                                <!-- Description field: Editable for managers -->
+                                <field name="description"/>
+                            </group>
+                        </page>
+                        <page string="Checklist">
+                            <!-- Sub-tasks as checklist: Fully editable for managers -->
+                            <field name="subtask_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="is_done"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Materials">
+                            <field name="material_line_ids">
+                                <list editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="product_uom_id"/>
+                                    <field name="description"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Photos">
+                            <field name="photo_ids" widget="many2many_binary"/>
+                        </page>
+                        <page string="Time">
+                            <group>
+                                <field name="timer_line_ids">
+                                    <list>
+                                        <field name="employee_id"/>
+                                        <field name="start_datetime"/>
+                                        <field name="end_datetime"/>
+                                        <field name="duration_hours"/>
+                                    </list>
+                                </field>
+                                <field name="duration_hours" readonly="1"/>
+                            </group>
+                        </page>
+                        <page string="Localisation">
+                            <group string="Localisation de début">
+                                <field name="start_latitude"/>
+                                <field name="start_longitude"/>
+                                <field name="start_city"/>
+                                <field name="start_country_name"/>
+                                <field name="start_ip_address"/>
+                                <field name="start_browser"/>
+                                <button name="action_start_location_maps" type="object" string="Voir sur la carte"
+                                        class="btn-link"/>
+                            </group>
+                            <group string="Localisation de fin">
+                                <field name="end_latitude"/>
+                                <field name="end_longitude"/>
+                                <field name="end_city"/>
+                                <field name="end_country_name"/>
+                                <field name="end_ip_address"/>
+                                <field name="end_browser"/>
+                                <button name="action_end_location_maps" type="object" string="Voir sur la carte"
+                                        class="btn-link"/>
+                            </group>
+                        </page>
+                        <page string="Chatter">
+                            <field name="message_follower_ids" readonly="1"/>
+                            <field name="activity_ids" readonly="1"/>
+                        </page>
+                    </notebook>
+
+                    <!-- Technician pages - Only visible when task is in progress -->
+                    <notebook groups="technician_task_mgmt.group_technician" invisible="state != 'in_progress'">
+                        <page string="Details">
+                <group>
+                                <!-- Tags field: Read-only for technicians -->
+                                <field name="tag_ids" widget="many2many_tags" readonly="1"/>
+                </group>
+                            <group>
+                                <!-- Description field: Read-only for technicians -->
+                                <field name="description" readonly="1"/>
+                            </group>
+                        </page>
+                        <page string="Checklist">
+                            <!-- Sub-tasks as checklist: Technicians can only check/uncheck, not edit names -->
+                            <field name="subtask_ids">
+                                <list editable="bottom" create="false">
+                                    <field name="sequence" widget="handle" readonly="1"/>
+                                    <field name="name" readonly="1"/>
+                                    <field name="is_done"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Materials">
+                            <field name="material_line_ids">
+                                <list editable="bottom">
+                                    <field name="product_id"/>
+                                    <field name="quantity"/>
+                                    <field name="product_uom_id"/>
+                                    <field name="description"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Photos">
+                            <field name="photo_ids" widget="many2many_binary"/>
+                        </page>
+                    </notebook>
+
+                    <chatter/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_tt_task_kanban_view" model="ir.actions.act_window.view">
+        <field name="view_mode">kanban</field>
+        <field name="view_id" ref="view_tt_task_kanban"/>
+        <field name="act_window_id" ref="action_tt_task"/>
+    </record>
+
+</odoo>
