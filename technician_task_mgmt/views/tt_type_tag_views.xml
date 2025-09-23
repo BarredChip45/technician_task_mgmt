@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Task Type Views -->
+    <record id="view_tt_task_type_tree" model="ir.ui.view">
+        <field name="name">tt.task.type.tree</field>
+        <field name="model">tt.task.type</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_tt_task_type_form" model="ir.ui.view">
+        <field name="name">tt.task.type.form</field>
+        <field name="model">tt.task.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Task Tag Views -->
+    <record id="view_tt_task_tag_tree" model="ir.ui.view">
+        <field name="name">tt.task.tag.tree</field>
+        <field name="model">tt.task.tag</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="color"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_tt_task_tag_form" model="ir.ui.view">
+        <field name="name">tt.task.tag.form</field>
+        <field name="model">tt.task.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="color" widget="colorpicker"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Building Tag Views -->
+    <record id="view_tt_building_tag_tree" model="ir.ui.view">
+        <field name="name">tt.building.tag.tree</field>
+        <field name="model">tt.building.tag</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="color"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_tt_building_tag_form" model="ir.ui.view">
+        <field name="name">tt.building.tag.form</field>
+        <field name="model">tt.building.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="color" widget="colorpicker"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+</odoo>
