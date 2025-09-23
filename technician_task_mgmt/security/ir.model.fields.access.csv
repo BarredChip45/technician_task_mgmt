@@ -1,5 +1,0 @@
-id,name,field_id:id,group_id:id,perm_read,perm_write
-access_tt_task_name_technician,tt.task name field technician,field_tt_task__name,technician_task_mgmt.group_technician,1,0
-access_tt_task_ticket_number_technician,tt.task ticket_number field technician,field_tt_task__ticket_number,technician_task_mgmt.group_technician,1,0
-access_tt_task_name_manager,tt.task name field manager,field_tt_task__name,technician_task_mgmt.group_tech_manager,1,1
-access_tt_task_ticket_number_manager,tt.task ticket_number field manager,field_tt_task__ticket_number,technician_task_mgmt.group_tech_manager,1,1
