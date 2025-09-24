@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name="technician_task_mgmt.TTTaskStartGeolocation">
+        <div class="o_technical_modal modal_shown">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Starting Task</h4>
+                    </div>
+                    <div class="modal-body text-center">
+                        <div class="fa fa-spinner fa-spin fa-3x text-primary mb-3"></div>
+                        <p>Requesting location access...</p>
+                        <p class="text-muted small">Please allow location access for accurate tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
