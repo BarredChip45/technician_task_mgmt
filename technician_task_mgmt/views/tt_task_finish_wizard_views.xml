@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_tt_task_finish_wizard" model="ir.ui.view">
+        <field name="name">tt.task.finish.wizard.form</field>
+        <field name="model">tt.task.finish.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Finish Task">
+                <group>
+                    <field name="task_id" readonly="1"/>
+                    <field name="finish_option"/>
+                </group>
+                <footer>
+                    <field name="id" widget="wizard_confirm_geolocation" nolabel="1"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
