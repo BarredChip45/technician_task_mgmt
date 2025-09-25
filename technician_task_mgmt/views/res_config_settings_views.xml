@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_res_config_settings_tt_form" model="ir.ui.view">
+        <field name="name">technician.task.settings.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="arch" type="xml">
+            <form string="Technician Task Settings">
+                <header>
+                    <button string="Save" type="object" name="execute" class="btn-primary"/>
+                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                </header>
+                <sheet>
+                    <group string="Technician Tasks">
+                        <field name="tt_timesheet_project_id"/>
+                        <field name="tt_warehouse_id"/>
+                        <field name="tt_src_location_id"/>
+                        <field name="tt_dest_location_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
