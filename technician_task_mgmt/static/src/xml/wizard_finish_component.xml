@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name="technician_task_mgmt.WizardFinishFieldWidget">
+        <TTWizardFinishGeolocation t-props="{wizardId: wizardId, finishOption: finishOption}"/>
+    </t>
+
+    <t t-name="technician_task_mgmt.WizardFinishGeolocationButton">
+        <button t-on-click="onClickConfirm"
+                class="btn btn-primary btn-lg w-100">
+            Confirm
+        </button>
+    </t>
+
+    <t t-name="technician_task_mgmt.WizardConfirmWidget">
+        <WizardConfirmButton t-props="{taskId: taskId, finishOption: finishOption}"/>
+    </t>
+
+    <t t-name="technician_task_mgmt.WizardConfirmButton">
+        <button t-on-click="onClickConfirm" class="btn btn-primary btn-lg w-100">
+            Confirm
+        </button>
+    </t>
+</templates>

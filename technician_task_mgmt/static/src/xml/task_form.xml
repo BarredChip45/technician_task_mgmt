@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name="technician_task_mgmt.TaskStartButton">
+        <button t-if="props.record.data.start_button_widget === 'start_button'"
+                class="btn btn-success"
+                t-on-click="startTask">
+            Start
+        </button>
+    </t>
+</templates>
