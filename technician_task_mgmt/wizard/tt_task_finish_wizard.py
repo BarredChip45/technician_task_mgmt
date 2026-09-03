@@ -9,17 +9,17 @@ class TTTaskFinishWizard(models.TransientModel):
 
     task_id = fields.Many2one(
         'tt.task',
-        string=_('Task'),
+        string='Task',
         required=True,
         readonly=True,
         default=lambda self: self._default_task(),
     )
     finish_option = fields.Selection(
         selection=[
-            ('done', _('Fully Completed')),
-            ('today', _('Finished for Today')),
+            ('done', 'Fully Completed'),
+            ('today', 'Finished for Today'),
         ],
-        string=_('Outcome'),
+        string='Outcome',
         default='done',
         required=True,
     )

@@ -9,7 +9,7 @@ class TTTaskStartWizard(models.TransientModel):
 
     task_id = fields.Many2one(
         'tt.task',
-        string=_('Task'),
+        string='Task',
         required=True,
         readonly=True,
         default=lambda self: self._default_task(),

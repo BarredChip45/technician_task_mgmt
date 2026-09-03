@@ -65,7 +65,7 @@ class TTTaskStage(models.Model):
 
     name = fields.Char(required=True, translate=True)
     sequence = fields.Integer(default=10)
-    fold = fields.Boolean(string=_('Folded in Kanban'))
+    fold = fields.Boolean(string='Folded in Kanban')
     state = fields.Selection([
         ('draft', 'Draft'),
         ('in_progress', 'In Progress'),
@@ -87,7 +87,7 @@ class TTTaskTag(models.Model):
     _description = 'Technician Task Tag'
 
     name = fields.Char(required=True, translate=True)
-    color = fields.Integer(string=_('Color'))
+    color = fields.Integer(string='Color')
     active = fields.Boolean(default=True)
 
 
@@ -96,7 +96,7 @@ class TTBuildingTag(models.Model):
     _description = 'Technician Building Tag'
 
     name = fields.Char(required=True, translate=True)
-    color = fields.Integer(string=_('Color'))
+    color = fields.Integer(string='Color')
     active = fields.Boolean(default=True)
 
 
@@ -147,14 +147,45 @@ class TTTimerLine(models.Model):
     start_datetime = fields.Datetime(required=True)
     end_datetime = fields.Datetime()
     timesheet_line_id = fields.Many2one(
-        'account.analytic.line', string=_('Timesheet Entry'), readonly=True, copy=False
+        'account.analytic.line', string='Timesheet Entry', readonly=True, copy=False
     )
     duration_hours = fields.Float(
-        string=_('Duration (hours)'), compute='_compute_duration', store=True
+        string='Duration (hours)', compute='_compute_duration', store=True
     )
     pause_duration_seconds = fields.Integer(
-        string=_('Paused Seconds'), default=0, copy=False
+        string='Paused Seconds', default=0, copy=False
     )
+
+    # Per-session geolocation (kept on the line so history is not overwritten
+    # when a task is stopped and resumed on another day)
+    start_latitude = fields.Float(string="Start Latitude", digits=(10, 7), readonly=True, aggregator=None)
+    start_longitude = fields.Float(string="Start Longitude", digits=(10, 7), readonly=True, aggregator=None)
+    start_city = fields.Char(string="Start City", readonly=True)
+    start_country_name = fields.Char(string="Start Country", readonly=True)
+    end_latitude = fields.Float(string="End Latitude", digits=(10, 7), readonly=True, aggregator=None)
+    end_longitude = fields.Float(string="End Longitude", digits=(10, 7), readonly=True, aggregator=None)
+    end_city = fields.Char(string="End City", readonly=True)
+    end_country_name = fields.Char(string="End Country", readonly=True)
+
+    def action_start_map(self):
+        self.ensure_one()
+        if not self.start_latitude or not self.start_longitude:
+            raise UserError(_('No start location coordinates available.'))
+        return {
+            'type': 'ir.actions.act_url',
+            'url': get_google_maps_url(self.start_latitude, self.start_longitude),
+            'target': 'new',
+        }
+
+    def action_end_map(self):
+        self.ensure_one()
+        if not self.end_latitude or not self.end_longitude:
+            raise UserError(_('No end location coordinates available.'))
+        return {
+            'type': 'ir.actions.act_url',
+            'url': get_google_maps_url(self.end_latitude, self.end_longitude),
+            'target': 'new',
+        }
 
     @api.depends('start_datetime', 'end_datetime', 'pause_duration_seconds')
     def _compute_duration(self):
@@ -303,34 +334,34 @@ class TTTask(models.Model):
     _rec_name = 'name'
 
     name = fields.Char(required=True, tracking=True)
-    ticket_number = fields.Char(string=_('Ticket Number'), tracking=True)
+    ticket_number = fields.Char(string='Ticket Number', tracking=True)
     employee_id = fields.Many2one('hr.employee', required=True, tracking=True,
                                   default=lambda self: self.env['hr.employee'].search([('user_id', '=', self.env.user.id)], limit=1).id)
-    task_type_id = fields.Many2one('tt.task.type', string=_('Task Type'), tracking=True)
-    tag_ids = fields.Many2many('tt.task.tag', string=_('Tags'))
-    color = fields.Integer(string=_('Color'))
-    partner_id = fields.Many2one('res.partner', string=_('Customer'))
-    company_id = fields.Many2one('res.company', string=_('Company'), default=lambda self: self.env.company, required=True, index=True)
+    task_type_id = fields.Many2one('tt.task.type', string='Task Type', tracking=True)
+    tag_ids = fields.Many2many('tt.task.tag', string='Tags')
+    color = fields.Integer(string='Color')
+    partner_id = fields.Many2one('res.partner', string='Customer')
+    company_id = fields.Many2one('res.company', string='Company', default=lambda self: self.env.company, required=True, index=True)
     building_tag_id = fields.Many2one(
         'tt.building.tag',
-        string=_('Location Tag')
+        string='Location Tag'
     )
-    location_text = fields.Text(string=_('Location Details'))
-    is_closed = fields.Boolean(string=_('Closed'), compute='_compute_is_closed', store=True)
-    vehicle_id = fields.Many2one('fleet.vehicle', string=_('Vehicle'))
-    scheduled_date = fields.Datetime(string=_('Scheduled Date'), tracking=True)
+    location_text = fields.Text(string='Location Details')
+    is_closed = fields.Boolean(string='Closed', compute='_compute_is_closed', store=True)
+    vehicle_id = fields.Many2one('fleet.vehicle', string='Vehicle')
+    scheduled_date = fields.Datetime(string='Scheduled Date', tracking=True)
     description = fields.Html()
 
-    subtask_ids = fields.One2many('tt.subtask', 'task_id', string=_('Sub-tasks'))
+    subtask_ids = fields.One2many('tt.subtask', 'task_id', string='Sub-tasks')
     photo_ids = fields.Many2many(
         'ir.attachment', 'tt_task_ir_attachment_rel', 'task_id', 'attachment_id',
-        string=_('Photos'),
+        string='Photos',
         domain="[('mimetype', 'ilike', 'image/')]"
     )
-    material_line_ids = fields.One2many('tt.material.line', 'task_id', string=_('Materials'))
+    material_line_ids = fields.One2many('tt.material.line', 'task_id', string='Materials')
 
     stage_id = fields.Many2one(
-        'tt.task.stage', string=_('Stage'), index=True, tracking=True,
+        'tt.task.stage', string='Stage', index=True, tracking=True,
         default=lambda self: self._default_stage_id(),
         group_expand='_read_group_stage_id'
     )
@@ -348,21 +379,21 @@ class TTTask(models.Model):
         ('done', 'Ready')
     ], default='normal', tracking=True)
 
-    start_datetime = fields.Datetime(string=_('Start Time'))
-    end_datetime = fields.Datetime(string=_('End Time'))
-    timer_line_ids = fields.One2many('tt.timer.line', 'task_id', string=_('Time Logs'))
+    start_datetime = fields.Datetime(string='Start Time')
+    end_datetime = fields.Datetime(string='End Time')
+    timer_line_ids = fields.One2many('tt.timer.line', 'task_id', string='Time Logs')
     duration_hours = fields.Float(
-        string=_('Total Duration (hours)'), compute='_compute_total_duration', store=True
+        string='Total Duration (hours)', compute='_compute_total_duration', store=True
     )
-    pause_start_datetime = fields.Datetime(string=_('Pause Start'), copy=False)
-    accumulated_pause_seconds = fields.Integer(string=_('Paused Seconds'), default=0, copy=False)
+    pause_start_datetime = fields.Datetime(string='Pause Start', copy=False)
+    accumulated_pause_seconds = fields.Integer(string='Paused Seconds', default=0, copy=False)
 
     picking_ids = fields.Many2many(
         'stock.picking', 'tt_task_picking_rel', 'task_id', 'picking_id',
-        string=_('Pickings'), copy=False
+        string='Pickings', copy=False
     )
     picking_count = fields.Integer(
-        string=_('Pickings'), compute='_compute_picking_count', readonly=True
+        string='Pickings', compute='_compute_picking_count', readonly=True
     )
     # UI helpers for Odoo 18 views (toggle Start/Stop button)
     can_start = fields.Boolean(compute='_compute_button_visibility', readonly=True)
@@ -371,7 +402,7 @@ class TTTask(models.Model):
     can_resume = fields.Boolean(compute='_compute_button_visibility', readonly=True)
     is_paused = fields.Boolean(compute='_compute_button_visibility', readonly=True, store=False)
     current_timer_display = fields.Char(
-        string=_('Timer'), compute='_compute_current_timer_display', readonly=True
+        string='Timer', compute='_compute_current_timer_display', readonly=True
     )
 
     # Champs de localisation (similaires à hr_attendance)
@@ -612,10 +643,31 @@ class TTTask(models.Model):
                 pause_delta = now - task.pause_start_datetime
                 total_pause += int(pause_delta.total_seconds()) if pause_delta else 0
             total_pause = max(total_pause, 0)
-            open_line.write({
+            line_end_vals = {
                 'end_datetime': now,
                 'pause_duration_seconds': total_pause,
-            })
+            }
+            # Capture end geolocation on the session line (history-safe)
+            end_lat = task.env.context.get('end_latitude')
+            end_lng = task.env.context.get('end_longitude')
+            if end_lat and end_lng:
+                geo = get_geoip_response(latitude=end_lat, longitude=end_lng)
+                line_end_vals.update({
+                    'end_latitude': geo.get('latitude'),
+                    'end_longitude': geo.get('longitude'),
+                    'end_city': geo.get('city'),
+                    'end_country_name': geo.get('country_name'),
+                })
+                # Keep task-level "latest" fields for compatibility (API, quick view)
+                task.write({
+                    'end_latitude': geo.get('latitude'),
+                    'end_longitude': geo.get('longitude'),
+                    'end_city': geo.get('city'),
+                    'end_country_name': geo.get('country_name'),
+                    'end_ip_address': geo.get('ip_address'),
+                    'end_browser': geo.get('browser'),
+                })
+            open_line.write(line_end_vals)
             # Only create stock movements when task is totally finished (not just for today)
             if task.material_line_ids and final_state == 'done':
                 task._create_material_picking()
@@ -668,20 +720,11 @@ class TTTask(models.Model):
             return {'success': False, 'error': 'No task ID provided'}
 
         try:
-            # Store geolocation if provided
-            if latitude and longitude:
-                geo_info = get_geoip_response(latitude=latitude, longitude=longitude)
-                self.write({
-                    'start_latitude': geo_info.get('latitude'),
-                    'start_longitude': geo_info.get('longitude'),
-                    'start_city': geo_info.get('city'),
-                    'start_country_name': geo_info.get('country_name'),
-                    'start_ip_address': geo_info.get('ip_address'),
-                    'start_browser': geo_info.get('browser'),
-                })
-
-            # Start the task
-            self.action_start()
+            # Start the task; action_start captures the location on the session
+            # line (and refreshes the task-level "latest" fields) via context.
+            self.with_context(
+                start_latitude=latitude, start_longitude=longitude
+            ).action_start()
 
             return {'success': True}
         except Exception as e:
@@ -709,8 +752,8 @@ class TTTask(models.Model):
                 raise UserError(_('No employee linked to current user.'))
             now = fields.Datetime.now()
 
-            # Start location is already handled by JavaScript via start_with_location_rpc
-            # No need to process geolocation here as it would overwrite the correct coordinates
+            # Start geolocation (if any) is read from context below and stored on
+            # the session line so history is preserved across stop/resume days.
             write_vals = {
                 'state': 'in_progress',
                 'start_datetime': now,
@@ -724,11 +767,32 @@ class TTTask(models.Model):
             if not task.id:
                 raise UserError(_('Invalid task record - no ID found'))
 
-            self.env['tt.timer.line'].create({
+            line_vals = {
                 'task_id': task.id,
                 'employee_id': employee.id,
                 'start_datetime': now,
-            })
+            }
+            # Capture start geolocation on the session line (history-safe)
+            start_lat = self.env.context.get('start_latitude')
+            start_lng = self.env.context.get('start_longitude')
+            if start_lat and start_lng:
+                geo = get_geoip_response(latitude=start_lat, longitude=start_lng)
+                line_vals.update({
+                    'start_latitude': geo.get('latitude'),
+                    'start_longitude': geo.get('longitude'),
+                    'start_city': geo.get('city'),
+                    'start_country_name': geo.get('country_name'),
+                })
+                # Keep task-level "latest" fields for compatibility (API, quick view)
+                task.write({
+                    'start_latitude': geo.get('latitude'),
+                    'start_longitude': geo.get('longitude'),
+                    'start_city': geo.get('city'),
+                    'start_country_name': geo.get('country_name'),
+                    'start_ip_address': geo.get('ip_address'),
+                    'start_browser': geo.get('browser'),
+                })
+            self.env['tt.timer.line'].create(line_vals)
 
         return False
 

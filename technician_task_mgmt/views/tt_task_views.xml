@@ -128,22 +128,32 @@
         <field name="arch" type="xml">
             <form string="Technician Task" class="tt_task_form">
                 <header>
-                    <!-- Start button with geolocation -->
-                    <field name="start_button_widget" widget="tt_task_start_button" invisible="not can_start" nolabel="1"/>
-                    <button name="action_open_finish_wizard" type="object" string="Finish" class="btn-danger" invisible="not can_stop or is_paused"/>
-                    <button name="action_pause_timer" type="object" string="Pause" class="btn-secondary" invisible="not can_pause"/>
-                    <button name="action_resume_timer" type="object" string="Resume" class="btn-secondary" invisible="not can_resume"/>
-                    <field name="current_timer_display" nolabel="1" readonly="1" class="oe_inline o_stat_value"/>
-
                     <field name="stage_id" widget="statusbar" options="{'fold_field': 'fold'}" groups="technician_task_mgmt.group_tech_manager"/>
                 </header>
                 <sheet>
-                    <!-- Ensure compute fields are loaded for visibility modifiers -->
+                    <!-- Ensure compute fields are loaded for visibility modifiers and the live timer -->
                     <field name="can_start" invisible="1"/>
                     <field name="can_stop" invisible="1"/>
+                    <field name="can_pause" invisible="1"/>
+                    <field name="can_resume" invisible="1"/>
                     <field name="start_datetime" invisible="1"/>
+                    <field name="pause_start_datetime" invisible="1"/>
+                    <field name="accumulated_pause_seconds" invisible="1"/>
+                    <field name="duration_hours" invisible="1"/>
                     <field name="is_paused" invisible="1"/>
                     <field name="state" invisible="1"/>
+
+                    <!-- Mobile-friendly action bar: real buttons that never collapse into a dropdown -->
+                    <div class="tt_action_bar d-flex flex-wrap align-items-center gap-2 mb-3">
+                        <field name="start_button_widget" widget="tt_task_start_button" invisible="not can_start" nolabel="1"/>
+                        <button name="action_pause_timer" type="object" string="Pause" icon="fa-pause"
+                                class="btn btn-warning btn-lg flex-grow-1" invisible="not can_pause"/>
+                        <button name="action_resume_timer" type="object" string="Reprendre" icon="fa-play"
+                                class="btn btn-info btn-lg flex-grow-1" invisible="not can_resume"/>
+                        <button name="action_open_finish_wizard" type="object" string="Terminer" icon="fa-flag-checkered"
+                                class="btn btn-danger btn-lg flex-grow-1" invisible="not can_stop or is_paused"/>
+                        <field name="current_timer_display" widget="tt_live_timer" nolabel="1" readonly="1" class="ms-auto"/>
+                    </div>
 
                     <group>
                         <group>
@@ -236,25 +246,48 @@
                             </group>
                         </page>
                         <page string="Localisation">
-                            <group string="Localisation de début">
-                                <field name="start_latitude"/>
-                                <field name="start_longitude"/>
-                                <field name="start_city"/>
-                                <field name="start_country_name"/>
-                                <field name="start_ip_address"/>
-                                <field name="start_browser"/>
-                                <button name="action_start_location_maps" type="object" string="Voir sur la carte"
-                                        class="btn-link"/>
-                            </group>
-                            <group string="Localisation de fin">
-                                <field name="end_latitude"/>
-                                <field name="end_longitude"/>
-                                <field name="end_city"/>
-                                <field name="end_country_name"/>
-                                <field name="end_ip_address"/>
-                                <field name="end_browser"/>
-                                <button name="action_end_location_maps" type="object" string="Voir sur la carte"
-                                        class="btn-link"/>
+                            <separator string="Historique des localisations par session"/>
+                            <field name="timer_line_ids" readonly="1" nolabel="1">
+                                <list string="Sessions" create="false" edit="false" delete="false">
+                                    <field name="employee_id"/>
+                                    <field name="start_datetime" string="Début"/>
+                                    <field name="start_city" string="Ville début"/>
+                                    <button name="action_start_map" type="object" string="Carte début"
+                                            icon="fa-map-marker" class="btn-link"
+                                            invisible="not start_latitude"/>
+                                    <field name="end_datetime" string="Fin"/>
+                                    <field name="end_city" string="Ville fin"/>
+                                    <button name="action_end_map" type="object" string="Carte fin"
+                                            icon="fa-map-marker" class="btn-link"
+                                            invisible="not end_latitude"/>
+                                    <field name="duration_hours" string="Durée" widget="float_time"/>
+                                    <field name="start_latitude" column_invisible="1"/>
+                                    <field name="end_latitude" column_invisible="1"/>
+                                </list>
+                            </field>
+
+                            <separator string="Dernière localisation"/>
+                            <group>
+                                <group string="Dernier début">
+                                    <field name="start_latitude"/>
+                                    <field name="start_longitude"/>
+                                    <field name="start_city"/>
+                                    <field name="start_country_name"/>
+                                    <field name="start_ip_address"/>
+                                    <field name="start_browser"/>
+                                    <button name="action_start_location_maps" type="object" string="Voir sur la carte"
+                                            class="btn-link"/>
+                                </group>
+                                <group string="Dernière fin">
+                                    <field name="end_latitude"/>
+                                    <field name="end_longitude"/>
+                                    <field name="end_city"/>
+                                    <field name="end_country_name"/>
+                                    <field name="end_ip_address"/>
+                                    <field name="end_browser"/>
+                                    <button name="action_end_location_maps" type="object" string="Voir sur la carte"
+                                            class="btn-link"/>
+                                </group>
                             </group>
                         </page>
                         <page string="Chatter">
