@@ -148,9 +148,9 @@
                         <field name="start_button_widget" widget="tt_task_start_button" invisible="not can_start" nolabel="1"/>
                         <button name="action_pause_timer" type="object" string="Pause" icon="fa-pause"
                                 class="btn btn-warning btn-lg flex-grow-1" invisible="not can_pause"/>
-                        <button name="action_resume_timer" type="object" string="Reprendre" icon="fa-play"
+                        <button name="action_resume_timer" type="object" string="Resume" icon="fa-play"
                                 class="btn btn-info btn-lg flex-grow-1" invisible="not can_resume"/>
-                        <button name="action_open_finish_wizard" type="object" string="Terminer" icon="fa-flag-checkered"
+                        <button name="action_open_finish_wizard" type="object" string="Finish" icon="fa-flag-checkered"
                                 class="btn btn-danger btn-lg flex-grow-1" invisible="not can_stop or is_paused"/>
                         <field name="current_timer_display" widget="tt_live_timer" nolabel="1" readonly="1" class="ms-auto"/>
                     </div>

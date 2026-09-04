@@ -33,32 +33,38 @@ export class TTLiveTimer extends Component {
         return value ? value.toMillis() : false;
     }
 
+    // Frozen total duration (across all sessions), used whenever no timer is
+    // actively running (draft, done, or "finished for today").
+    _frozen(data) {
+        const secs = (data.duration_hours || 0) * 3600;
+        return secs > 0 ? this._format(secs) : "";
+    }
+
     _compute() {
         const data = this.props.record.data;
-        const state = data.state;
 
-        if (state === "in_progress") {
-            const start = this._millis(data.start_datetime);
-            if (!start) {
-                const secs = (data.duration_hours || 0) * 3600;
-                return secs > 0 ? this._format(secs) : "00:00:00";
-            }
-            const now = Date.now();
-            let elapsed = (now - start) / 1000;
-            let paused = data.accumulated_pause_seconds || 0;
-            const pauseStart = this._millis(data.pause_start_datetime);
-            if (pauseStart) {
-                paused += (now - pauseStart) / 1000;
-            }
-            return this._format(elapsed - paused);
+        // Only tick while a timer line is actually open. can_stop is true when
+        // running and not paused; can_resume is true when running and paused.
+        // "Finished for today" keeps the task in_progress but closes the line,
+        // so both are false there and the timer must stop.
+        const running = data.can_stop || data.can_resume;
+        if (!running) {
+            return this._frozen(data);
         }
 
-        if (state === "done") {
-            const secs = (data.duration_hours || 0) * 3600;
-            return secs > 0 ? this._format(secs) : "";
+        const start = this._millis(data.start_datetime);
+        if (!start) {
+            return this._frozen(data);
         }
-
-        return "";
+        const now = Date.now();
+        let elapsed = (now - start) / 1000;
+        let paused = data.accumulated_pause_seconds || 0;
+        const pauseStart = this._millis(data.pause_start_datetime);
+        if (pauseStart) {
+            // While paused, elapsed and paused grow together → display freezes.
+            paused += (now - pauseStart) / 1000;
+        }
+        return this._format(elapsed - paused);
     }
 
     get display() {

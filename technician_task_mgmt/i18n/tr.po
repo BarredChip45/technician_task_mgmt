@@ -4,12 +4,13 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0-20250909\n"
+"Project-Id-Version: Odoo Server 18.0+e-20250909\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-17 17:24+0000\n"
-"PO-Revision-Date: 2025-09-17 17:24+0000\n"
+"POT-Creation-Date: 2026-09-04 15:17+0000\n"
+"PO-Revision-Date: 2026-09-04 15:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -18,75 +19,81 @@ msgstr ""
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "İşlem Gerekli"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Action not allowed in the current state."
-msgstr ""
+msgstr "Bu durumda işleme izin verilmiyor."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__active
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_tag__active
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__active
 msgid "Active"
-msgstr ""
+msgstr "Aktif"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Aktiviteler"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Aktivite İstisna Dekorasyonu"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "Aktivite Durumu"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Aktivite Türü Simgesi"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Add location details..."
-msgstr ""
+msgstr "Konum ayrıntıları ekleyin..."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Ek Sayısı"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__end_country_name
+#: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__start_country_name
+msgid "Based on IP Address"
+msgstr "IP Adresine göre"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task__kanban_state__blocked
 msgid "Blocked"
-msgstr ""
+msgstr "Engellendi"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__can_pause
 msgid "Can Pause"
-msgstr ""
+msgstr "Duraklatılabilir"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__can_resume
 msgid "Can Resume"
-msgstr ""
+msgstr "Devam Ettirilebilir"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__can_start
 msgid "Can Start"
-msgstr ""
+msgstr "Başlatılabilir"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__can_stop
 msgid "Can Stop"
-msgstr ""
+msgstr "Durdurulabilir"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_finish_wizard
@@ -104,7 +111,17 @@ msgstr "İptal edildi"
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Cannot start a task that is not in Draft or In Progress."
-msgstr ""
+msgstr "Taslak veya Devam Ediyor durumunda olmayan bir görev başlatılamaz."
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Carte début"
+msgstr "Başlangıç haritası"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Carte fin"
+msgstr "Bitiş haritası"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
@@ -112,16 +129,17 @@ msgid "Chatter"
 msgstr "Sohbet"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Checklist"
+msgstr "Kontrol listesi"
+
+#. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__is_closed
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Closed"
-msgstr ""
+msgstr "Kapalı"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__color
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__color
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_tag__color
@@ -129,11 +147,9 @@ msgid "Color"
 msgstr "Renk"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__company_id
 msgid "Company"
-msgstr ""
+msgstr "Şirket"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_res_config_settings
@@ -141,7 +157,8 @@ msgid "Config Settings"
 msgstr "Yapılandırma Ayarları"
 
 #. module: technician_task_mgmt
-#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_finish_wizard
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/wizard_finish_component.xml:0
 msgid "Confirm"
 msgstr "Onayla"
 
@@ -156,7 +173,7 @@ msgstr "Onayla"
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__create_uid
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Oluşturan"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__create_date
@@ -169,11 +186,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__create_date
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Oluşturulma tarihi"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__partner_id
 msgid "Customer"
 msgstr "Müşteri"
@@ -181,12 +196,27 @@ msgstr "Müşteri"
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Date"
-msgstr ""
+msgstr "Tarih"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_res_config_settings__tt_warehouse_id
 msgid "Default Warehouse for Technician Tasks"
-msgstr ""
+msgstr "Teknisyen Görevleri için Varsayılan Depo"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Dernier début"
+msgstr "Son başlangıç"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Dernière fin"
+msgstr "Son bitiş"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Dernière localisation"
+msgstr "Son konum"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__description
@@ -197,7 +227,7 @@ msgstr "Açıklama"
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_res_config_settings__tt_dest_location_id
 msgid "Destination Location for Technician Consumption"
-msgstr ""
+msgstr "Teknisyen Tüketimi için Hedef Konum"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
@@ -207,7 +237,7 @@ msgstr "Ayrıntılar"
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_res_config_settings_tt_form
 msgid "Discard"
-msgstr ""
+msgstr "Vazgeç"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__display_name
@@ -220,7 +250,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__display_name
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Görünen Ad"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task__state__done
@@ -237,14 +267,22 @@ msgstr "Tamamlandı"
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_kanban
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Draft"
-msgstr ""
+msgstr "Taslak"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__duration_hours
 msgid "Duration (hours)"
 msgstr "Süre (saat)"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Durée"
+msgstr "Süre"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Début"
+msgstr "Başlangıç"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__employee_id
@@ -253,21 +291,53 @@ msgid "Employee"
 msgstr "Çalışan"
 
 #. module: technician_task_mgmt
-#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_datetime
-msgid "End Datetime"
-msgstr ""
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_browser
+msgid "End Browser"
+msgstr "Bitiş Tarayıcısı"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_city
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_city
+msgid "End City"
+msgstr "Bitiş Şehri"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_country_name
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_country_name
+msgid "End Country"
+msgstr "Bitiş Ülkesi"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_datetime
+msgid "End Datetime"
+msgstr "Bitiş Tarihi/Saati"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_ip_address
+msgid "End IP Address"
+msgstr "Bitiş IP Adresi"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_latitude
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_latitude
+msgid "End Latitude"
+msgstr "Bitiş Enlemi"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_longitude
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_longitude
+msgid "End Longitude"
+msgstr "Bitiş Boylamı"
+
+#. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_datetime
 msgid "End Time"
-msgstr ""
+msgstr "Bitiş Zamanı"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
-msgid "Finish"
-msgstr "Bitir"
+msgid "Fin"
+msgstr "Bitiş"
 
 #. module: technician_task_mgmt
 #. odoo-python
@@ -279,41 +349,35 @@ msgstr "Görevi Bitir"
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task_finish_wizard
 msgid "Finish Technician Task Wizard"
-msgstr ""
+msgstr "Teknisyen Görevi Bitirme Sihirbazı"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task_finish_wizard__finish_option__today
 #: model:tt.task.stage,name:technician_task_mgmt.tt_stage_finished_today
 msgid "Finished for Today"
 msgstr "Bugün için bitti"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_stage__fold
 msgid "Folded in Kanban"
-msgstr ""
+msgstr "Kanban'da Katlanmış"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Takipçiler"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Takipçiler (İş Ortakları)"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Font Awesome simgesi, örn. fa-tasks"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task_finish_wizard__finish_option__done
 msgid "Fully Completed"
 msgstr "Tamamen tamamlandı"
@@ -321,12 +385,17 @@ msgstr "Tamamen tamamlandı"
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Group By"
-msgstr ""
+msgstr "Grupla"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Mesajı Var"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Historique des localisations par session"
+msgstr "Oturum bazında konum geçmişi"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__id
@@ -339,28 +408,28 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__id
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Simge"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Bir istisna aktivitesini belirtmek için simge."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "İşaretlenirse, yeni mesajlar dikkatinizi gerektirir."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_has_error
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "İşaretlenirse, bazı mesajlarda teslim hatası var."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task__kanban_state__normal
@@ -375,27 +444,33 @@ msgstr "Devam Ediyor"
 #. module: technician_task_mgmt
 #: model:tt.task.type,name:technician_task_mgmt.tt_task_type_installation
 msgid "Installation"
-msgstr ""
+msgstr "Kurulum"
+
+#. module: technician_task_mgmt
+#. odoo-python
+#: code:addons/technician_task_mgmt/models/tt_task.py:0
+msgid "Invalid task record - no ID found"
+msgstr "Geçersiz görev kaydı - kimlik bulunamadı"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_subtask__is_done
 msgid "Is Done"
-msgstr ""
+msgstr "Tamamlandı"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Takipçi mi"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__is_paused
 msgid "Is Paused"
-msgstr ""
+msgstr "Duraklatıldı mı"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__kanban_state
 msgid "Kanban State"
-msgstr ""
+msgstr "Kanban Durumu"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__write_uid
@@ -408,7 +483,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__write_uid
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Son Güncelleyen"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__write_date
@@ -421,7 +496,12 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__write_date
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Son Güncelleme Tarihi"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Localisation"
+msgstr "Konum"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
@@ -429,17 +509,17 @@ msgid "Location"
 msgstr "Konum"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__location_text
 msgid "Location Details"
 msgstr "Konum Ayrıntıları"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__building_tag_id
+msgid "Location Tag"
+msgstr "Konum Etiketi"
+
+#. module: technician_task_mgmt
 #: model:ir.actions.act_window,name:technician_task_mgmt.action_tt_building_tag
-#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__building_tag_ids
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_location_tags
 msgid "Location Tags"
 msgstr "Konum Etiketleri"
@@ -447,11 +527,9 @@ msgstr "Konum Etiketleri"
 #. module: technician_task_mgmt
 #: model:tt.task.type,name:technician_task_mgmt.tt_task_type_maintenance
 msgid "Maintenance"
-msgstr ""
+msgstr "Bakım"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__material_line_ids
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Materials"
@@ -465,17 +543,17 @@ msgstr "Max Teknisyenler"
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Mesaj Teslim hatası"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Mesajlar"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Aktivite Son Tarihim"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__name
@@ -495,110 +573,126 @@ msgstr "Yeni"
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Sonraki Aktivite Takvim Etkinliği"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Sonraki Aktivite Son Tarihi"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Sonraki Aktivite Özeti"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Sonraki Aktivite Türü"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No employee linked to current user."
-msgstr ""
+msgstr "Mevcut kullanıcıya bağlı çalışan yok."
+
+#. module: technician_task_mgmt
+#. odoo-python
+#: code:addons/technician_task_mgmt/models/tt_task.py:0
+msgid "No end location coordinates available."
+msgstr "Bitiş konum koordinatları mevcut değil."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No paused timer found."
-msgstr ""
+msgstr "Duraklatılmış zamanlayıcı bulunamadı."
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_kanban
 msgid "No photo"
-msgstr ""
+msgstr "Fotoğraf yok"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No running timer found on this task."
-msgstr ""
+msgstr "Bu görevde çalışan zamanlayıcı bulunamadı."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No running timer found to pause."
-msgstr ""
+msgstr "Duraklatılacak çalışan zamanlayıcı bulunamadı."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No running timer found to resume."
-msgstr ""
+msgstr "Devam ettirilecek çalışan zamanlayıcı bulunamadı."
+
+#. module: technician_task_mgmt
+#. odoo-python
+#: code:addons/technician_task_mgmt/models/tt_task.py:0
+msgid "No start location coordinates available."
+msgstr "Başlangıç konum koordinatları mevcut değil."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 msgid "No task found to finish."
-msgstr ""
+msgstr "Bitirilecek görev bulunamadı."
+
+#. module: technician_task_mgmt
+#. odoo-python
+#: code:addons/technician_task_mgmt/wizard/tt_task_start_wizard.py:0
+msgid "No task found to start."
+msgstr "Başlatılacak görev bulunamadı."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "İşlem Sayısı"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Hata Sayısı"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "İşlem gerektiren mesaj sayısı"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Teslim hatası olan mesaj sayısı"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Only in-progress tasks can be finished."
-msgstr ""
+msgstr "Yalnızca devam eden görevler bitirilebilir."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Only in-progress tasks can be paused."
-msgstr ""
+msgstr "Yalnızca devam eden görevler duraklatılabilir."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Only in-progress tasks can be resumed."
-msgstr ""
+msgstr "Yalnızca devam eden görevler devam ettirilebilir."
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Open"
-msgstr ""
+msgstr "Açık"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_finish_wizard__finish_option
 msgid "Outcome"
 msgstr "Sonuç"
@@ -609,35 +703,27 @@ msgid "Pause"
 msgstr "Duraklat"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__pause_start_datetime
 msgid "Pause Start"
-msgstr ""
+msgstr "Duraklatma Başlangıcı"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__accumulated_pause_seconds
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__pause_duration_seconds
 msgid "Paused Seconds"
-msgstr ""
+msgstr "Duraklatılan Saniye"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__photo_ids
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Photos"
 msgstr "Fotoğraflar"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__picking_count
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__picking_ids
 msgid "Pickings"
-msgstr ""
+msgstr "Transferler"
 
 #. module: technician_task_mgmt
 #. odoo-python
@@ -646,61 +732,67 @@ msgid "Please add at least one photo before completing the task."
 msgstr "Görevi tamamlamadan önce lütfen en az bir fotoğraf ekleyin."
 
 #. module: technician_task_mgmt
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/task_start_geolocation.xml:0
+msgid "Please allow location access for accurate tracking."
+msgstr "Doğru takip için lütfen konum erişimine izin verin."
+
+#. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid ""
 "Please configure a timesheet project in Technician Task settings before "
 "stopping the timer."
-msgstr ""
+msgstr "Zamanlayıcıyı durdurmadan önce lütfen Teknisyen Görevi ayarlarında bir zaman çizelgesi projesi yapılandırın."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid ""
 "Please configure an analytic plan for company %s before logging timesheets."
-msgstr ""
+msgstr "Zaman çizelgelerini kaydetmeden önce lütfen %s şirketi için bir analitik plan yapılandırın."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__product_id
 msgid "Product"
-msgstr ""
+msgstr "Ürün"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__product_uom_id
 msgid "Product Uom"
-msgstr ""
+msgstr "Ürün Ölçü Birimi"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Project %s has no analytic account for timesheet entries."
-msgstr ""
+msgstr "%s projesinin zaman çizelgesi kayıtları için analitik hesabı yok."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_res_config_settings__tt_timesheet_project_id
 msgid "Project used when logging time from technician task timers."
-msgstr ""
+msgstr "Teknisyen görev zamanlayıcılarından süre kaydedilirken kullanılan proje."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__quantity
 msgid "Quantity"
-msgstr ""
+msgstr "Miktar"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Quantity must be greater than zero."
-msgstr ""
+msgstr "Miktar sıfırdan büyük olmalıdır."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__rating_ids
 msgid "Ratings"
-msgstr ""
+msgstr "Değerlendirmeler"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task__kanban_state__done
 msgid "Ready"
-msgstr ""
+msgstr "Hazır"
 
 #. module: technician_task_mgmt
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_reports
@@ -708,39 +800,43 @@ msgid "Reports"
 msgstr "Raporlar"
 
 #. module: technician_task_mgmt
-#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_user_id
-msgid "Responsible User"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Reprendre"
+msgstr "Devam Et"
 
 #. module: technician_task_mgmt
-#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
-msgid "Resume"
-msgstr "Devam Ettir"
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/task_start_geolocation.xml:0
+msgid "Requesting location access..."
+msgstr "Konum erişimi isteniyor..."
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_user_id
+msgid "Responsible User"
+msgstr "Sorumlu Kullanıcı"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Resume the timer before finishing."
-msgstr ""
+msgstr "Bitirmeden önce zamanlayıcıyı devam ettirin."
 
 #. module: technician_task_mgmt
 #: model:tt.task.type,name:technician_task_mgmt.tt_task_type_repair
 msgid "Réparation"
-msgstr ""
+msgstr "Onarım"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "SMS Teslim hatası"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_res_config_settings_tt_form
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__scheduled_date
 msgid "Scheduled Date"
 msgstr "Planlanan Tarih"
@@ -749,7 +845,12 @@ msgstr "Planlanan Tarih"
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_subtask__sequence
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_stage__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Sıra"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Sessions"
+msgstr "Oturumlar"
 
 #. module: technician_task_mgmt
 #: model:ir.actions.act_window,name:technician_task_mgmt.action_tt_settings
@@ -760,11 +861,9 @@ msgstr "Ayarlar"
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_res_config_settings__tt_src_location_id
 msgid "Source Location for Technician Materials"
-msgstr ""
+msgstr "Teknisyen Malzemeleri için Kaynak Konum"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__stage_id
 msgid "Stage"
 msgstr "Aşama"
@@ -776,28 +875,73 @@ msgid "Stages"
 msgstr "Aşamalar"
 
 #. module: technician_task_mgmt
-#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/task_form.xml:0
+#: code:addons/technician_task_mgmt/static/src/xml/task_start_component.xml:0
 msgid "Start"
 msgstr "Başlat"
 
 #. module: technician_task_mgmt
-#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_datetime
-msgid "Start Datetime"
-msgstr ""
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_browser
+msgid "Start Browser"
+msgstr "Başlangıç Tarayıcısı"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_button_widget
+msgid "Start Button Widget"
+msgstr "Başlat Düğmesi Bileşeni"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_city
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_city
+msgid "Start City"
+msgstr "Başlangıç Şehri"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_country_name
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_country_name
+msgid "Start Country"
+msgstr "Başlangıç Ülkesi"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_datetime
+msgid "Start Datetime"
+msgstr "Başlangıç Tarihi/Saati"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_ip_address
+msgid "Start IP Address"
+msgstr "Başlangıç IP Adresi"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_latitude
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_latitude
+msgid "Start Latitude"
+msgstr "Başlangıç Enlemi"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_longitude
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_longitude
+msgid "Start Longitude"
+msgstr "Başlangıç Boylamı"
+
+#. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_datetime
 msgid "Start Time"
-msgstr ""
+msgstr "Başlangıç Zamanı"
+
+#. module: technician_task_mgmt
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/task_start_geolocation.xml:0
+msgid "Starting Task"
+msgstr "Görev Başlatılıyor"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__state
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_stage__state
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "State"
-msgstr ""
+msgstr "Durum"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__activity_state
@@ -806,26 +950,20 @@ msgid ""
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr ""
+msgstr "Aktivitelere göre durum\nGecikmiş: Bitiş tarihi çoktan geçti\nBugün: Aktivite tarihi bugün\nPlanlanan: Gelecekteki aktiviteler."
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__subtask_ids
 msgid "Sub-tasks"
-msgstr ""
+msgstr "Alt görevler"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__tag_ids
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_tags
 msgid "Tags"
 msgstr "Etiketler"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__task_id
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_subtask__task_id
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_finish_wizard__task_id
@@ -837,7 +975,7 @@ msgstr "Görev"
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Task %s"
-msgstr ""
+msgstr "Görev %s"
 
 #. module: technician_task_mgmt
 #: model:ir.actions.act_window,name:technician_task_mgmt.action_tt_task_tag
@@ -845,8 +983,6 @@ msgid "Task Tags"
 msgstr "Görev Etiketleri"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__task_type_id
 msgid "Task Type"
 msgstr "Görev Türü"
@@ -865,64 +1001,64 @@ msgstr "Görevler"
 #: model:res.groups,name:technician_task_mgmt.group_technician
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Technician"
-msgstr ""
+msgstr "Teknisyen"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_building_tag
 msgid "Technician Building Tag"
-msgstr ""
+msgstr "Teknisyen Bina Etiketi"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Technician Consumption"
-msgstr ""
+msgstr "Teknisyen Tüketimi"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_subtask
 msgid "Technician Sub-task"
-msgstr ""
+msgstr "Teknisyen Alt Görevi"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Technician Task"
-msgstr ""
+msgstr "Teknisyen Görevi"
 
 #. module: technician_task_mgmt
 #: model:res.groups,name:technician_task_mgmt.group_tech_manager
 msgid "Technician Task Manager"
-msgstr ""
+msgstr "Teknisyen Görev Yöneticisi"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_material_line
 msgid "Technician Task Material Line"
-msgstr ""
+msgstr "Teknisyen Görev Malzeme Satırı"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_res_config_settings_tt_form
 msgid "Technician Task Settings"
-msgstr ""
+msgstr "Teknisyen Görev Ayarları"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task_stage
 msgid "Technician Task Stage"
-msgstr ""
+msgstr "Teknisyen Görev Aşaması"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task_tag
 msgid "Technician Task Tag"
-msgstr ""
+msgstr "Teknisyen Görev Etiketi"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_timer_line
 msgid "Technician Task Timer Line"
-msgstr ""
+msgstr "Teknisyen Görev Zamanlayıcı Satırı"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task_type
 msgid "Technician Task Type"
-msgstr ""
+msgstr "Teknisyen Görev Türü"
 
 #. module: technician_task_mgmt
 #: model:ir.actions.act_window,name:technician_task_mgmt.action_tt_task
@@ -934,23 +1070,32 @@ msgstr "Teknisyen Görevleri"
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Technician Timesheet %s"
-msgstr ""
+msgstr "Teknisyen Zaman Çizelgesi %s"
+
+#. module: technician_task_mgmt
+#: model:res.groups,comment:technician_task_mgmt.group_technician
+msgid ""
+"Technician user type with backend access limited to Max Techniciens only"
+msgstr "Arka uç erişimi yalnızca Max Teknisyenler ile sınırlı teknisyen kullanıcı türü"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Terminer"
+msgstr "Bitir"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "The task is already running. Please stop it before starting again."
-msgstr ""
+msgstr "Görev zaten çalışıyor. Yeniden başlatmadan önce lütfen durdurun."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "The timer is already paused."
-msgstr ""
+msgstr "Zamanlayıcı zaten duraklatıldı."
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__ticket_number
 msgid "Ticket Number"
 msgstr "Bilet Numarası"
@@ -961,58 +1106,50 @@ msgid "Time"
 msgstr "Zaman"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__timer_line_ids
 msgid "Time Logs"
-msgstr ""
+msgstr "Zaman Kayıtları"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__current_timer_display
 msgid "Timer"
-msgstr ""
+msgstr "Zamanlayıcı"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Timer line is missing an employee."
-msgstr ""
+msgstr "Zamanlayıcı satırında çalışan eksik."
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__timesheet_line_id
 msgid "Timesheet Entry"
-msgstr ""
+msgstr "Zaman Çizelgesi Kaydı"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_res_config_settings__tt_timesheet_project_id
 msgid "Timesheet Project for Technician Tasks"
-msgstr ""
+msgstr "Teknisyen Görevleri için Zaman Çizelgesi Projesi"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Today"
-msgstr ""
+msgstr "Bugün"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__duration_hours
 msgid "Total Duration (hours)"
-msgstr ""
+msgstr "Toplam Süre (saat)"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Type"
-msgstr ""
+msgstr "Tür"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Kayıttaki istisna aktivitesinin türü."
 
 #. module: technician_task_mgmt
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_types
@@ -1023,21 +1160,44 @@ msgstr "Türler"
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Unknown finish option."
-msgstr ""
+msgstr "Bilinmeyen bitirme seçeneği."
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__vehicle_id
 msgid "Vehicle"
 msgstr "Araç"
 
 #. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Ville début"
+msgstr "Başlangıç şehri"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Ville fin"
+msgstr "Bitiş şehri"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Voir sur la carte"
+msgstr "Haritada gör"
+
+#. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Web Sitesi Mesajları"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Web sitesi iletişim geçmişi"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Resume"
+msgstr "Devam Ettir"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Finish"
+msgstr "Bitir"

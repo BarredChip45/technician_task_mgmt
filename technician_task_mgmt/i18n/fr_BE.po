@@ -4,12 +4,13 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 18.0-20250909\n"
+"Project-Id-Version: Odoo Server 18.0+e-20250909\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-17 17:34+0000\n"
-"PO-Revision-Date: 2025-09-17 17:34+0000\n"
+"POT-Creation-Date: 2026-09-04 15:17+0000\n"
+"PO-Revision-Date: 2026-09-04 15:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: fr_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -18,75 +19,81 @@ msgstr ""
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_needaction
 msgid "Action Needed"
-msgstr ""
+msgstr "Action requise"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Action not allowed in the current state."
-msgstr ""
+msgstr "Action non autorisée dans l'état actuel."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__active
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_tag__active
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__active
 msgid "Active"
-msgstr ""
+msgstr "Actif"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_ids
 msgid "Activities"
-msgstr ""
+msgstr "Activités"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_exception_decoration
 msgid "Activity Exception Decoration"
-msgstr ""
+msgstr "Décoration d'exception d'activité"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_state
 msgid "Activity State"
-msgstr ""
+msgstr "État de l'activité"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_type_icon
 msgid "Activity Type Icon"
-msgstr ""
+msgstr "Icône de type d'activité"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Add location details..."
-msgstr ""
+msgstr "Ajouter des détails de localisation..."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_attachment_count
 msgid "Attachment Count"
-msgstr ""
+msgstr "Nombre de pièces jointes"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__end_country_name
+#: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__start_country_name
+msgid "Based on IP Address"
+msgstr "Basé sur l'adresse IP"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task__kanban_state__blocked
 msgid "Blocked"
-msgstr ""
+msgstr "Bloqué"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__can_pause
 msgid "Can Pause"
-msgstr ""
+msgstr "Peut mettre en pause"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__can_resume
 msgid "Can Resume"
-msgstr ""
+msgstr "Peut reprendre"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__can_start
 msgid "Can Start"
-msgstr ""
+msgstr "Peut démarrer"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__can_stop
 msgid "Can Stop"
-msgstr ""
+msgstr "Peut arrêter"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_finish_wizard
@@ -98,30 +105,41 @@ msgstr "Annuler"
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task_stage__state__cancel
 #: model:tt.task.stage,name:technician_task_mgmt.tt_stage_cancel
 msgid "Cancelled"
-msgstr "Annulée"
+msgstr "Annulé"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Cannot start a task that is not in Draft or In Progress."
-msgstr ""
+msgstr "Impossible de démarrer une tâche qui n'est pas en Brouillon ou En cours."
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Carte début"
+msgstr "Carte début"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Carte fin"
+msgstr "Carte fin"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Chatter"
-msgstr "Fil de discussion"
+msgstr "Chatter"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Checklist"
+msgstr "Liste de contrôle"
+
+#. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__is_closed
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Closed"
-msgstr ""
+msgstr "Fermé"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__color
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__color
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_tag__color
@@ -129,11 +147,9 @@ msgid "Color"
 msgstr "Couleur"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__company_id
 msgid "Company"
-msgstr ""
+msgstr "Société"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_res_config_settings
@@ -141,7 +157,8 @@ msgid "Config Settings"
 msgstr "Paramètres de configuration"
 
 #. module: technician_task_mgmt
-#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_finish_wizard
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/wizard_finish_component.xml:0
 msgid "Confirm"
 msgstr "Confirmer"
 
@@ -156,7 +173,7 @@ msgstr "Confirmer"
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__create_uid
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__create_date
@@ -169,11 +186,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__create_date
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__partner_id
 msgid "Customer"
 msgstr "Client"
@@ -181,23 +196,38 @@ msgstr "Client"
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Date"
-msgstr ""
+msgstr "Date"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_res_config_settings__tt_warehouse_id
 msgid "Default Warehouse for Technician Tasks"
-msgstr ""
+msgstr "Entrepôt par défaut pour les tâches techniciens"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Dernier début"
+msgstr "Dernier début"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Dernière fin"
+msgstr "Dernière fin"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Dernière localisation"
+msgstr "Dernière localisation"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__description
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__description
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_res_config_settings__tt_dest_location_id
 msgid "Destination Location for Technician Consumption"
-msgstr ""
+msgstr "Emplacement de destination pour la consommation technicien"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
@@ -207,7 +237,7 @@ msgstr "Détails"
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_res_config_settings_tt_form
 msgid "Discard"
-msgstr ""
+msgstr "Annuler"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__display_name
@@ -220,7 +250,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__display_name
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task__state__done
@@ -229,7 +259,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_kanban
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Done"
-msgstr "Terminée"
+msgstr "Terminé"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task__state__draft
@@ -237,14 +267,22 @@ msgstr "Terminée"
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_kanban
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Draft"
-msgstr ""
+msgstr "Brouillon"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__duration_hours
 msgid "Duration (hours)"
 msgstr "Durée (heures)"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Durée"
+msgstr "Durée"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Début"
+msgstr "Début"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__employee_id
@@ -253,21 +291,53 @@ msgid "Employee"
 msgstr "Employé"
 
 #. module: technician_task_mgmt
-#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_datetime
-msgid "End Datetime"
-msgstr ""
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_browser
+msgid "End Browser"
+msgstr "Navigateur de fin"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_city
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_city
+msgid "End City"
+msgstr "Ville de fin"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_country_name
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_country_name
+msgid "End Country"
+msgstr "Pays de fin"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_datetime
+msgid "End Datetime"
+msgstr "Date et heure de fin"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_ip_address
+msgid "End IP Address"
+msgstr "Adresse IP de fin"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_latitude
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_latitude
+msgid "End Latitude"
+msgstr "Latitude de fin"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_longitude
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__end_longitude
+msgid "End Longitude"
+msgstr "Longitude de fin"
+
+#. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__end_datetime
 msgid "End Time"
-msgstr ""
+msgstr "Heure de fin"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
-msgid "Finish"
-msgstr "Terminer"
+msgid "Fin"
+msgstr "Fin"
 
 #. module: technician_task_mgmt
 #. odoo-python
@@ -279,41 +349,35 @@ msgstr "Terminer la tâche"
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task_finish_wizard
 msgid "Finish Technician Task Wizard"
-msgstr ""
+msgstr "Assistant de fin de tâche technicien"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task_finish_wizard__finish_option__today
 #: model:tt.task.stage,name:technician_task_mgmt.tt_stage_finished_today
 msgid "Finished for Today"
-msgstr "Fini pour aujourd'hui"
+msgstr "Terminé pour aujourd'hui"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_stage__fold
 msgid "Folded in Kanban"
-msgstr ""
+msgstr "Replié dans le Kanban"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_follower_ids
 msgid "Followers"
-msgstr ""
+msgstr "Abonnés"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_partner_ids
 msgid "Followers (Partners)"
-msgstr ""
+msgstr "Abonnés (Partenaires)"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__activity_type_icon
 msgid "Font awesome icon e.g. fa-tasks"
-msgstr ""
+msgstr "Icône Font Awesome, par ex. fa-tasks"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task_finish_wizard__finish_option__done
 msgid "Fully Completed"
 msgstr "Totalement terminé"
@@ -321,12 +385,17 @@ msgstr "Totalement terminé"
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Group By"
-msgstr ""
+msgstr "Regrouper par"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "A un message"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Historique des localisations par session"
+msgstr "Historique des localisations par session"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__id
@@ -339,28 +408,28 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__id
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__id
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_exception_icon
 msgid "Icon"
-msgstr ""
+msgstr "Icône"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__activity_exception_icon
 msgid "Icon to indicate an exception activity."
-msgstr ""
+msgstr "Icône pour indiquer une activité d'exception."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_needaction
 msgid "If checked, new messages require your attention."
-msgstr ""
+msgstr "Si coché, de nouveaux messages requièrent votre attention."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_has_error
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_has_sms_error
 msgid "If checked, some messages have a delivery error."
-msgstr ""
+msgstr "Si coché, certains messages ont une erreur de livraison."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task__kanban_state__normal
@@ -375,27 +444,33 @@ msgstr "En cours"
 #. module: technician_task_mgmt
 #: model:tt.task.type,name:technician_task_mgmt.tt_task_type_installation
 msgid "Installation"
-msgstr ""
+msgstr "Installation"
+
+#. module: technician_task_mgmt
+#. odoo-python
+#: code:addons/technician_task_mgmt/models/tt_task.py:0
+msgid "Invalid task record - no ID found"
+msgstr "Enregistrement de tâche invalide - aucun ID trouvé"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_subtask__is_done
 msgid "Is Done"
-msgstr ""
+msgstr "Est terminé"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_is_follower
 msgid "Is Follower"
-msgstr ""
+msgstr "Est abonné"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__is_paused
 msgid "Is Paused"
-msgstr ""
+msgstr "Est en pause"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__kanban_state
 msgid "Kanban State"
-msgstr ""
+msgstr "État Kanban"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__write_uid
@@ -408,7 +483,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__write_uid
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Mis à jour par"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__write_date
@@ -421,37 +496,40 @@ msgstr ""
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_type__write_date
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Mis à jour le"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Localisation"
+msgstr "Localisation"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Location"
-msgstr "Emplacement"
+msgstr "Localisation"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__location_text
 msgid "Location Details"
-msgstr "Détails de l'emplacement"
+msgstr "Détails de localisation"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__building_tag_id
+msgid "Location Tag"
+msgstr "Étiquette de localisation"
+
+#. module: technician_task_mgmt
 #: model:ir.actions.act_window,name:technician_task_mgmt.action_tt_building_tag
-#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__building_tag_ids
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_location_tags
 msgid "Location Tags"
-msgstr "Étiquettes d'emplacement"
+msgstr "Étiquettes de localisation"
 
 #. module: technician_task_mgmt
 #: model:tt.task.type,name:technician_task_mgmt.tt_task_type_maintenance
 msgid "Maintenance"
-msgstr ""
+msgstr "Maintenance"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__material_line_ids
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Materials"
@@ -460,22 +538,22 @@ msgstr "Matériaux"
 #. module: technician_task_mgmt
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_root
 msgid "Max Techniciens"
-msgstr ""
+msgstr "Max Techniciens"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_has_error
 msgid "Message Delivery error"
-msgstr ""
+msgstr "Erreur de livraison du message"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_ids
 msgid "Messages"
-msgstr ""
+msgstr "Messages"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Échéance de mon activité"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_building_tag__name
@@ -495,110 +573,126 @@ msgstr "Nouveau"
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Événement calendrier de la prochaine activité"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_date_deadline
 msgid "Next Activity Deadline"
-msgstr ""
+msgstr "Échéance de la prochaine activité"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_summary
 msgid "Next Activity Summary"
-msgstr ""
+msgstr "Résumé de la prochaine activité"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_type_id
 msgid "Next Activity Type"
-msgstr ""
+msgstr "Type de la prochaine activité"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No employee linked to current user."
-msgstr ""
+msgstr "Aucun employé lié à l'utilisateur actuel."
+
+#. module: technician_task_mgmt
+#. odoo-python
+#: code:addons/technician_task_mgmt/models/tt_task.py:0
+msgid "No end location coordinates available."
+msgstr "Aucune coordonnée de localisation de fin disponible."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No paused timer found."
-msgstr ""
+msgstr "Aucun minuteur en pause trouvé."
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_kanban
 msgid "No photo"
-msgstr ""
+msgstr "Aucune photo"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No running timer found on this task."
-msgstr ""
+msgstr "Aucun minuteur en cours trouvé sur cette tâche."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No running timer found to pause."
-msgstr ""
+msgstr "Aucun minuteur en cours à mettre en pause."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "No running timer found to resume."
-msgstr ""
+msgstr "Aucun minuteur en cours à reprendre."
+
+#. module: technician_task_mgmt
+#. odoo-python
+#: code:addons/technician_task_mgmt/models/tt_task.py:0
+msgid "No start location coordinates available."
+msgstr "Aucune coordonnée de localisation de début disponible."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 msgid "No task found to finish."
-msgstr ""
+msgstr "Aucune tâche à terminer."
+
+#. module: technician_task_mgmt
+#. odoo-python
+#: code:addons/technician_task_mgmt/wizard/tt_task_start_wizard.py:0
+msgid "No task found to start."
+msgstr "Aucune tâche à démarrer."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_needaction_counter
 msgid "Number of Actions"
-msgstr ""
+msgstr "Nombre d'actions"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_has_error_counter
 msgid "Number of errors"
-msgstr ""
+msgstr "Nombre d'erreurs"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_needaction_counter
 msgid "Number of messages requiring action"
-msgstr ""
+msgstr "Nombre de messages nécessitant une action"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__message_has_error_counter
 msgid "Number of messages with delivery error"
-msgstr ""
+msgstr "Nombre de messages avec erreur de livraison"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Only in-progress tasks can be finished."
-msgstr ""
+msgstr "Seules les tâches en cours peuvent être terminées."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Only in-progress tasks can be paused."
-msgstr ""
+msgstr "Seules les tâches en cours peuvent être mises en pause."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Only in-progress tasks can be resumed."
-msgstr ""
+msgstr "Seules les tâches en cours peuvent être reprises."
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Open"
-msgstr ""
+msgstr "Ouvert"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_finish_wizard__finish_option
 msgid "Outcome"
 msgstr "Résultat"
@@ -606,38 +700,30 @@ msgstr "Résultat"
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Pause"
-msgstr ""
+msgstr "Pause"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__pause_start_datetime
 msgid "Pause Start"
-msgstr ""
+msgstr "Début de pause"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__accumulated_pause_seconds
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__pause_duration_seconds
 msgid "Paused Seconds"
-msgstr ""
+msgstr "Secondes de pause"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__photo_ids
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Photos"
-msgstr ""
+msgstr "Photos"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__picking_count
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__picking_ids
 msgid "Pickings"
-msgstr ""
+msgstr "Transferts"
 
 #. module: technician_task_mgmt
 #. odoo-python
@@ -646,61 +732,67 @@ msgid "Please add at least one photo before completing the task."
 msgstr "Veuillez ajouter au moins une photo avant de terminer la tâche."
 
 #. module: technician_task_mgmt
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/task_start_geolocation.xml:0
+msgid "Please allow location access for accurate tracking."
+msgstr "Veuillez autoriser l'accès à la localisation pour un suivi précis."
+
+#. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid ""
 "Please configure a timesheet project in Technician Task settings before "
 "stopping the timer."
-msgstr ""
+msgstr "Veuillez configurer un projet de feuille de temps dans les paramètres Tâches Techniciens avant d'arrêter le minuteur."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid ""
 "Please configure an analytic plan for company %s before logging timesheets."
-msgstr ""
+msgstr "Veuillez configurer un plan analytique pour la société %s avant d'enregistrer les feuilles de temps."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__product_id
 msgid "Product"
-msgstr ""
+msgstr "Article"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__product_uom_id
 msgid "Product Uom"
-msgstr ""
+msgstr "Unité de mesure de l'article"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Project %s has no analytic account for timesheet entries."
-msgstr ""
+msgstr "Le projet %s n'a pas de compte analytique pour les feuilles de temps."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_res_config_settings__tt_timesheet_project_id
 msgid "Project used when logging time from technician task timers."
-msgstr ""
+msgstr "Projet utilisé lors de l'enregistrement du temps depuis les minuteurs des tâches techniciens."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__quantity
 msgid "Quantity"
-msgstr ""
+msgstr "Quantité"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Quantity must be greater than zero."
-msgstr ""
+msgstr "La quantité doit être supérieure à zéro."
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__rating_ids
 msgid "Ratings"
-msgstr ""
+msgstr "Évaluations"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields.selection,name:technician_task_mgmt.selection__tt_task__kanban_state__done
 msgid "Ready"
-msgstr ""
+msgstr "Prêt"
 
 #. module: technician_task_mgmt
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_reports
@@ -708,39 +800,43 @@ msgid "Reports"
 msgstr "Rapports"
 
 #. module: technician_task_mgmt
-#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_user_id
-msgid "Responsible User"
-msgstr ""
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Reprendre"
+msgstr "Reprendre"
 
 #. module: technician_task_mgmt
-#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
-msgid "Resume"
-msgstr "Reprendre"
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/task_start_geolocation.xml:0
+msgid "Requesting location access..."
+msgstr "Demande d'accès à la localisation..."
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__activity_user_id
+msgid "Responsible User"
+msgstr "Utilisateur responsable"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Resume the timer before finishing."
-msgstr ""
+msgstr "Reprenez le minuteur avant de terminer."
 
 #. module: technician_task_mgmt
 #: model:tt.task.type,name:technician_task_mgmt.tt_task_type_repair
 msgid "Réparation"
-msgstr ""
+msgstr "Réparation"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__message_has_sms_error
 msgid "SMS Delivery error"
-msgstr ""
+msgstr "Erreur de livraison SMS"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_res_config_settings_tt_form
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__scheduled_date
 msgid "Scheduled Date"
 msgstr "Date planifiée"
@@ -749,7 +845,12 @@ msgstr "Date planifiée"
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_subtask__sequence
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_stage__sequence
 msgid "Sequence"
-msgstr ""
+msgstr "Séquence"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Sessions"
+msgstr "Sessions"
 
 #. module: technician_task_mgmt
 #: model:ir.actions.act_window,name:technician_task_mgmt.action_tt_settings
@@ -760,11 +861,9 @@ msgstr "Paramètres"
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_res_config_settings__tt_src_location_id
 msgid "Source Location for Technician Materials"
-msgstr ""
+msgstr "Emplacement source pour les matériaux technicien"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__stage_id
 msgid "Stage"
 msgstr "Étape"
@@ -776,28 +875,73 @@ msgid "Stages"
 msgstr "Étapes"
 
 #. module: technician_task_mgmt
-#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/task_form.xml:0
+#: code:addons/technician_task_mgmt/static/src/xml/task_start_component.xml:0
 msgid "Start"
 msgstr "Démarrer"
 
 #. module: technician_task_mgmt
-#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_datetime
-msgid "Start Datetime"
-msgstr ""
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_browser
+msgid "Start Browser"
+msgstr "Navigateur de début"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_button_widget
+msgid "Start Button Widget"
+msgstr "Widget bouton de démarrage"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_city
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_city
+msgid "Start City"
+msgstr "Ville de début"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_country_name
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_country_name
+msgid "Start Country"
+msgstr "Pays de début"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_datetime
+msgid "Start Datetime"
+msgstr "Date et heure de début"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_ip_address
+msgid "Start IP Address"
+msgstr "Adresse IP de début"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_latitude
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_latitude
+msgid "Start Latitude"
+msgstr "Latitude de début"
+
+#. module: technician_task_mgmt
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_longitude
+#: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__start_longitude
+msgid "Start Longitude"
+msgstr "Longitude de début"
+
+#. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__start_datetime
 msgid "Start Time"
-msgstr ""
+msgstr "Heure de début"
+
+#. module: technician_task_mgmt
+#. odoo-javascript
+#: code:addons/technician_task_mgmt/static/src/xml/task_start_geolocation.xml:0
+msgid "Starting Task"
+msgstr "Démarrage de la tâche"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__state
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_stage__state
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "State"
-msgstr ""
+msgstr "État"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__activity_state
@@ -806,26 +950,20 @@ msgid ""
 "Overdue: Due date is already passed\n"
 "Today: Activity date is today\n"
 "Planned: Future activities."
-msgstr ""
+msgstr "Statut basé sur les activités\nEn retard : la date d'échéance est déjà passée\nAujourd'hui : la date de l'activité est aujourd'hui\nPlanifié : activités futures."
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__subtask_ids
 msgid "Sub-tasks"
-msgstr ""
+msgstr "Sous-tâches"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__tag_ids
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_tags
 msgid "Tags"
 msgstr "Étiquettes"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/wizard/tt_task_finish_wizard.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_material_line__task_id
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_subtask__task_id
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task_finish_wizard__task_id
@@ -837,7 +975,7 @@ msgstr "Tâche"
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Task %s"
-msgstr ""
+msgstr "Tâche %s"
 
 #. module: technician_task_mgmt
 #: model:ir.actions.act_window,name:technician_task_mgmt.action_tt_task_tag
@@ -845,8 +983,6 @@ msgid "Task Tags"
 msgstr "Étiquettes de tâche"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__task_type_id
 msgid "Task Type"
 msgstr "Type de tâche"
@@ -854,7 +990,7 @@ msgstr "Type de tâche"
 #. module: technician_task_mgmt
 #: model:ir.actions.act_window,name:technician_task_mgmt.action_tt_task_type
 msgid "Task Types"
-msgstr "Types de tâches"
+msgstr "Types de tâche"
 
 #. module: technician_task_mgmt
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_tasks
@@ -865,92 +1001,101 @@ msgstr "Tâches"
 #: model:res.groups,name:technician_task_mgmt.group_technician
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Technician"
-msgstr ""
+msgstr "Technicien"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_building_tag
 msgid "Technician Building Tag"
-msgstr ""
+msgstr "Étiquette de bâtiment technicien"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Technician Consumption"
-msgstr ""
+msgstr "Consommation technicien"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_subtask
 msgid "Technician Sub-task"
-msgstr ""
+msgstr "Sous-tâche technicien"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
 msgid "Technician Task"
-msgstr ""
+msgstr "Tâche technicien"
 
 #. module: technician_task_mgmt
 #: model:res.groups,name:technician_task_mgmt.group_tech_manager
 msgid "Technician Task Manager"
-msgstr ""
+msgstr "Gestionnaire de tâches technicien"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_material_line
 msgid "Technician Task Material Line"
-msgstr ""
+msgstr "Ligne de matériau de tâche technicien"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_res_config_settings_tt_form
 msgid "Technician Task Settings"
-msgstr ""
+msgstr "Paramètres des tâches technicien"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task_stage
 msgid "Technician Task Stage"
-msgstr ""
+msgstr "Étape de tâche technicien"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task_tag
 msgid "Technician Task Tag"
-msgstr ""
+msgstr "Étiquette de tâche technicien"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_timer_line
 msgid "Technician Task Timer Line"
-msgstr ""
+msgstr "Ligne de minuteur de tâche technicien"
 
 #. module: technician_task_mgmt
 #: model:ir.model,name:technician_task_mgmt.model_tt_task_type
 msgid "Technician Task Type"
-msgstr ""
+msgstr "Type de tâche technicien"
 
 #. module: technician_task_mgmt
 #: model:ir.actions.act_window,name:technician_task_mgmt.action_tt_task
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_res_config_settings_tt_form
 msgid "Technician Tasks"
-msgstr "Tâches technicien"
+msgstr "Tâches techniciens"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Technician Timesheet %s"
-msgstr ""
+msgstr "Feuille de temps technicien %s"
+
+#. module: technician_task_mgmt
+#: model:res.groups,comment:technician_task_mgmt.group_technician
+msgid ""
+"Technician user type with backend access limited to Max Techniciens only"
+msgstr "Type d'utilisateur technicien avec accès backend limité à Max Techniciens uniquement"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Terminer"
+msgstr "Terminer"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "The task is already running. Please stop it before starting again."
-msgstr ""
+msgstr "La tâche est déjà en cours. Veuillez l'arrêter avant de redémarrer."
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "The timer is already paused."
-msgstr ""
+msgstr "Le minuteur est déjà en pause."
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__ticket_number
 msgid "Ticket Number"
 msgstr "Numéro de ticket"
@@ -961,83 +1106,98 @@ msgid "Time"
 msgstr "Temps"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__timer_line_ids
 msgid "Time Logs"
-msgstr ""
+msgstr "Journaux de temps"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__current_timer_display
 msgid "Timer"
-msgstr ""
+msgstr "Minuteur"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Timer line is missing an employee."
-msgstr ""
+msgstr "La ligne de minuteur n'a pas d'employé."
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_timer_line__timesheet_line_id
 msgid "Timesheet Entry"
-msgstr ""
+msgstr "Entrée de feuille de temps"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_res_config_settings__tt_timesheet_project_id
 msgid "Timesheet Project for Technician Tasks"
-msgstr ""
+msgstr "Projet de feuille de temps pour les tâches techniciens"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Today"
-msgstr ""
+msgstr "Aujourd'hui"
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__duration_hours
 msgid "Total Duration (hours)"
-msgstr ""
+msgstr "Durée totale (heures)"
 
 #. module: technician_task_mgmt
 #: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_search
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__activity_exception_decoration
 msgid "Type of the exception activity on record."
-msgstr ""
+msgstr "Type de l'activité d'exception enregistrée."
 
 #. module: technician_task_mgmt
 #: model:ir.ui.menu,name:technician_task_mgmt.menu_tt_types
 msgid "Types"
-msgstr ""
+msgstr "Types"
 
 #. module: technician_task_mgmt
 #. odoo-python
 #: code:addons/technician_task_mgmt/models/tt_task.py:0
 msgid "Unknown finish option."
-msgstr ""
+msgstr "Option de fin inconnue."
 
 #. module: technician_task_mgmt
-#. odoo-python
-#: code:addons/technician_task_mgmt/models/tt_task.py:0
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__vehicle_id
 msgid "Vehicle"
 msgstr "Véhicule"
 
 #. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Ville début"
+msgstr "Ville début"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Ville fin"
+msgstr "Ville fin"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Voir sur la carte"
+msgstr "Voir sur la carte"
+
+#. module: technician_task_mgmt
 #: model:ir.model.fields,field_description:technician_task_mgmt.field_tt_task__website_message_ids
 msgid "Website Messages"
-msgstr ""
+msgstr "Messages du site web"
 
 #. module: technician_task_mgmt
 #: model:ir.model.fields,help:technician_task_mgmt.field_tt_task__website_message_ids
 msgid "Website communication history"
-msgstr ""
+msgstr "Historique de communication du site web"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Resume"
+msgstr "Reprendre"
+
+#. module: technician_task_mgmt
+#: model_terms:ir.ui.view,arch_db:technician_task_mgmt.view_tt_task_form
+msgid "Finish"
+msgstr "Terminer"
